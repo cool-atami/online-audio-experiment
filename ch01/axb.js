@@ -6,7 +6,7 @@ var axb_instructions_practice = {
     2つ目の音(x)が似ているのが
     (a)1つ目の音か (b)3つ目の音か を a か b のキーで答えてもらいます。
     静かな環境で、可能な場合はイヤホンなどの装着をお願いいたします。
-    スペースキーを押すと練習課題を2問呈示いたします。
+    スペースキーを押すと練習課題を1問呈示いたします。
     </p>
   `,
 };
@@ -54,14 +54,23 @@ var axb_question = {
   },
 };
 
+// Preload をしないから、最初のトライアルがもっさりする。
+var list_audio_preload = ['espo-1.wav','esupo-2.wav','esupo-3.wav']
+var preload = {
+  type: 'preload',
+  audio: list_audio_preload,
+}
+
 // TIMELINE
 var timeline = [];
+timeline.push(preload);
 timeline.push(axb_instructions_practice);
 timeline.push(fixation);
 timeline.push(trial_a);
 timeline.push(trial_x);
 timeline.push(trial_b);
 timeline.push(axb_question);
+
 
 jsPsych.init({
     timeline: timeline,
@@ -71,7 +80,6 @@ jsPsych.init({
 });
 
 // FIXME:
-// Preload をしないから、最初のトライアルがもっさりする。
 // timelineを使ってい兄のでtrial_a みたいなのをたくさん書かないといけない。
 // onfinish がないから feedback ができない。
 // randomize もされていない。
