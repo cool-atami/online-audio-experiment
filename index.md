@@ -1,37 +1,13 @@
-## Welcome to GitHub Pages
+## オンライン音声実験の手引
 
-You can use the [editor on GitHub](https://github.com/cool-atami/online-audio-experiment/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+　この資料は音声研究のためのオンライン実験の作成を容易にするために作られました。もちろんこの資料で出版される論文が増えれば最高ですが、オンラインの手法やデータの妥当性を考える材料として使っていただけるだけでも幸いです。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+プロジェクト自体の背景は [README](https://github.com/cool-atami/online-audio-experiment) に書きましたが、ここでは資料の構成を以下に述べます。興味に応じて読み進めてください。
 
-### Markdown
+- [知覚実験の概要]()（AX実験、ABX＆AXB実験、自然度測定、その他）
+- [知覚実験の作成]()（jsPsychの説明、ミニマルな実験の作成、発展編）
+- [産出実験の概要]()（A実験、B実験、C実験、その他）
+- [産出実験の作成]()（ミニマルな実験の作成、発展編）
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+また、フォローしてほしい範囲があればお気軽にご連絡ください（GitHubに登録し、こちらのリンクから要望をお書きください）。この資料はオープンソースですので、編集に加わってくださるのも歓迎です🤗
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cool-atami/online-audio-experiment/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
