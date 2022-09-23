@@ -55,7 +55,7 @@ Cognition.runは前述のようにjsPsychに特化したプラットフォーム
 1. `Tasks / Create new task` で適当な名前を付与し(minimal-axbなど)Save（先のステップで作成済みの場合は不要）
 1. `Tasks / minimal-axb /` から `Design > Source code` をクリックし、`Tasks / minimal-axb / Edit` 画面を表示
 1. 実験スクリプトを[こちら](https://gist.github.com/kishiyamat/cc4a18f8ceb376abb4afdcf9366dc595)からコピーし `Task Code` に貼り付け
-1. 音源ファイル(`espo-1.wav`, `esupo-2.wav`, `supo-3.wav`) を[こちら](https://github.com/cool-atami/online-audio-experiment/blob/feature/make-subpages/02_perception_hands_on/axb_sample_audio.zip) からダウンロードし解凍し、`Stimuli` にアップロード
+1. 音源ファイル(`espo-1.wav`, `esupo-2.wav`, `supo-3.wav`) を[こちら](https://github.com/cool-atami/online-audio-experiment/blob/gh-pages/02_perception_minimal/axb_sample_audio.zip) からダウンロードし解凍し、`Stimuli` にアップロード
 1. `jsPsych library version` を `6.3.1` に指定
 1. `Tasks / minimal-axb / Edit` の `minimal-axb` をクリックしてタスク画面に戻りLinkを取得
 
