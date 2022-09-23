@@ -56,7 +56,7 @@ Collaboratorsでは共同研究者を追加して一緒に作業することが�
 今回の内容を学んだ結果として作成できる実験は https://rqqrtyynpe.cognition.run になります。トライアルは一つしかありませんが、URLにアクセスさせて実験を実施し、回答を取得するという一連の流れは実施できます。以下に実験を作成する手順を共有します。
 
 <!-- https://emgithub.com/ -->
-<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fcool-atami%2Fonline-audio-experiment%2Fblob%2Fgh-pages%2Fch01%2Faxb.js&style=monokai&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></script>
+<script src="https://gist.github.com/kishiyamat/cc4a18f8ceb376abb4afdcf9366dc595.js"></script>
 
 1. https://github.com/cool-atami/online-audio-experiment/blob/gh-pages/ch01/axb.js ををコピーしてXに貼り付け
 1. https://github.com/cool-atami/online-audio-experiment/tree/gh-pages/ch01/audio のファイルをダウンロードし、Xにアップロード
