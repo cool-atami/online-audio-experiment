@@ -5,10 +5,12 @@
 プロジェクト自体の背景は [README](https://github.com/cool-atami/online-audio-experiment) 
 に書きました。ここでは資料の構成を以下に述べます。興味に応じて読み進めてください。
 
-- [知覚実験の概要](./01_introduction/)（AX実験、ABX＆AXB実験、自然度測定、その他）
-- [知覚実験の作成](./02_perception/)（jsPsychの説明、ミニマルな実験の作成、発展編）
-- [産出実験の概要](./03_production/)（A実験、B実験、C実験、その他）
-- [産出実験の作成](./04_analysis/)（ミニマルな実験の作成、発展編）
+- [知覚実験の概要](./01_perception_intro/)（AX実験、ABX＆AXB実験、自然度測定の説明）
+- [ミニマルな知覚実験の作成](./02_perception_minimal/)（jsPsychの概要とミニマルな実験の作成）
+- [jsPsych(基本)](./03_jspsych_basic/)（jsPsychの基本機能であるtimelineやpreloadなど）
+- [jsPsych(発展編)](./04_jspsych_intermediate)（jsPsychの発展編: リスト作成やランダマイズなど）
+- [産出実験の概要]()（作成中）
+- [産出実験の作成]()（作成中）
 
 また、フォローしてほしい範囲があればお気軽にご連絡ください
 （GitHubに登録し、[こちら](https://github.com/cool-atami/online-audio-experiment/issues)
