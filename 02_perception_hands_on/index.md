@@ -19,7 +19,7 @@ Cognition.runは、研究者により作られたjsPsychの実験に特化した
 
 <!--TODO: 上にリンクを入れる-->
 
-[^free]【編集時補足】本日よりCognition.runは一部有料化になりました。
+[^free]: 【編集時補足】本日よりCognition.runは一部有料化になりました。
     無料版でできることは以下になります。練習（と論文一本程度）には十分かと思いますが、[後ほど]()制限をなくす手法をいくつか紹介します。 
     - 4 stored tasks
     - 70 collected runs per task
