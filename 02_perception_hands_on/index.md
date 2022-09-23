@@ -15,9 +15,9 @@ jsPsychを使うには、特別なソフトウェアをインストールする�
 
 前に紹介したjsPsychを使えば、実験の指示や、質問、回答の収集などを効率よく行うことができます。しかし実験を行うにはそれだけではありません。jsPsychで実験のスクリプトを完成したら、それを実験参加者がアクセスできるところ（サーバー）に置く必要があります。自力でサーバーを構築するのは莫大な手間がかかるので、以下では [Cognition.run](https://www.cognition.run/) という無料サービスを紹介します[[^end]]。
 
-[^end] :ちなみに、この [Cognition.run](https://www.cognition.run/) がもしサービスを終了した場合（またはインターネットが使えない場合）を備えて、本サイトではオフラインで実行する方法の補足資料も提供します。興味がある方は補足資料をご覧ください。
+[^end]: ちなみに、この [Cognition.run](https://www.cognition.run/) がもしサービスを終了した場合（またはインターネットが使えない場合）を備えて、本サイトではオフラインで実行する方法の補足資料も提供します。興味がある方は補足資料をご覧ください。
 
-[Cognition.run](https://www.cognition.run/) は、研究者により作られたjsPsychの実験に特化したプラットフォームです。このサイトでタスク（実験）を作って、中にjsPsychのスクリプトを仕込めば、実験ができる状態になります。実験のリンクも自動で生成してくれるうえ、参加者が課題を完成したかどうかや、参加者が入力したデータのダウンロードなどをすべてサイトで確認できるので、とても便利です。なんと言っても無料がうれしいですね！[[^free]]
+[Cognition.run](https://www.cognition.run/) は、研究者により作られたjsPsychの実験に特化したプラットフォームです。このサイトでタスク（実験）を作って、中にjsPsychのスクリプトを仕込めば、実験ができる状態になります。実験のリンクも自動で生成してくれるうえ、参加者が課題を完成したかどうかや、参加者が入力したデータのダウンロードなどをすべてサイトで確認できるので、とても便利です。なんと言っても無料がうれしいですね[[^free]]！
 
 [^free]: Cognition.runは一部有料化になりました。無料版でできることは
     - 4 stored tasks
@@ -54,6 +54,11 @@ Collaboratorsでは共同研究者を追加して一緒に作業することが�
 ### ミニマルな実験の作成手順
 
 今回の内容を学んだ結果として作成できる実験は https://rqqrtyynpe.cognition.run になります。トライアルは一つしかありませんが、URLにアクセスさせて実験を実施し、回答を取得するという一連の流れは実施できます。以下に実験を作成する手順を共有します。
+
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fdotnet%2Fcorefx%2Fblob%2Fmaster%2Fsrc%2FSystem.ObjectModel%2Fsrc%2FSystem%2FWindows%2FInput%2FICommand.cs&style=default&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showCopy=on"></script>
+
+
+<script src="http://gist-it.appspot.com/https://github.com/dotnet/corefx/blob/master/src/System.ObjectModel/src/System/Windows/Input/ICommand.cs"></script>
 
 <script src="http://gist-it.appspot.com/https://github.com/cool-atami/online-audio-experiment/blob/gh-pages/ch01/axb.js"></script>
 
