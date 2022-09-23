@@ -45,6 +45,8 @@ Collaboratorsでは共同研究者を追加して一緒に作業することが�
 
 今回の内容を学んだ結果として作成できる実験は https://rqqrtyynpe.cognition.run になります。トライアルは一つしかありませんが、URLにアクセスさせて実験を実施し、回答を取得するという一連の流れは実施できます。以下に実験を作成する手順を共有します。
 
+<script src="http://gist-it.appspot.com/https://github.com/cool-atami/online-audio-experiment/blob/gh-pages/ch01/axb.js"></script>
+
 1. https://github.com/cool-atami/online-audio-experiment/blob/gh-pages/ch01/axb.js ををコピーしてXに貼り付け
 1. https://github.com/cool-atami/online-audio-experiment/tree/gh-pages/ch01/audio のファイルをダウンロードし、Xにアップロード
 1. Xして URLを発行
