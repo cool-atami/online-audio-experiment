@@ -72,11 +72,11 @@ jsPsych.init({
 });
 ```
 
-以上をまとめると、実験は <u>(a)`timeline` を定義する</u>ことと、<u>それを辞書にまとめて `jsPsych.init` に与える</u>だけで作成できます。今回はAXBですので  `trial_a` → `trial_x` → `trial_b` の順序ですが、AXにしたかったりABXにしたかったりする際は順序を置き換えればよいだけです。さて、それでは timeline の中身を詳しく見ていきましょう。
+以上をまとめると、実験は <u>(a) timeline を List として定義</u>し、<u>それを辞書にまとめてjsPsych.initに与える</u>だけで作成できます。今回はAXBですので  `trial_a` → `trial_x` → `trial_b` の順序ですが、AXにしたかったりABXにしたかったりする際は順序を置き換えればよいだけです。さて、それでは timeline の中身として、preloadとresponseを詳しく見ていきましょう。
 
 ### preload
 
-コピペしたコードの `timeline` までの部分で定義した変数は(定義は`var` を使っている部分です)、`reseponse`と`preload`に分けられます。どちらも`jsPsych`に使うオブジェクトで、 `type` というキーワードを必要とする辞書です。例として、`preload`の定義を見てみましょう。
+コピペしたコードの `timeline` までの部分で定義した変数は(定義は`var` を使っている部分です)、`reseponse`と`preload`に分けられます。どちらも`type` というキーワードを必要とする辞書です。例として、`preload`の定義を見てみましょう。
 
 ```js
 var list_audio_preload = ['espo-1.wav','esupo-2.wav','esupo-3.wav']
@@ -86,15 +86,17 @@ var preload = {
 }
 ```
 
-したがって、`preload` は `'preload'` という値を `type` をキーに持った辞書になっています。そして、audio というキーワードには事前にダウンロードするwavのファイル名をリストで持っています。
+このように、`preload` は `'preload'` という値を `type` をキーに持った辞書になっています。そして、`audio` というキーワードに対してはpreload(事前にdownload)するwavのファイル名をリストで持っています。
 
-この preload が必要となる理由は、preloadなしだと被験者のPCにダウンロードするタイミングが刺激の呈示前になってしまうので、若干のラグが発生しうるからです。その場合、AXB実験のような呈示する時間がが大切なケースでは問題になるので、かならず preload は組み込むようにしましょう。
+この `preload` が必要となる理由は、preloadなしだと被験者のPCにダウンロードするタイミングが刺激の呈示前になってしまうので、若干のラグが発生しうるからです。その場合、AXB実験のような呈示する時間がが大切なケースでは問題になるので、かならず preload は組み込むようにしましょう。
 
 ### response
 
-次は `response` の説明です。サンプルコードで使ったのは `html-keyboard-response` と `audio-keyboard-response` の2種類です。前者は注視点「＋」の呈示と被験者からのレスポンスの取得が役割で、後者は音声呈示とレスポンスの取得が役割です。こうした `response` の種類は https://www.jspsych.org/6.3/plugins/list-of-plugins/ にもあり、それぞれで必要なキーワードが決まっています。そこでまずは `html-keyboard-response` を例に考えてみましょう
+次は `response` の説明です。サンプルコードで使ったのは `html-keyboard-response` と `audio-keyboard-response` の2種類です。前者は注視点「＋」の呈示と被験者からのレスポンスの取得が役割で、後者は音声呈示とレスポンスの取得が役割です。こうした `response` の種類は[公式ドキュメント](https://www.jspsych.org/6.3/plugins/list-of-plugins/) にもあり[[^ver]]、それぞれで必要なキーワードが決まっています。そこでまずは `html-keyboard-response` を例に考えてみましょう
 
-　この `html-keyboard-response` では以下に示すように、`type`, `stimulus`, `choices`, `trial_duration` の4つのキーワードを指定してあげる必要があります。HTMLを表示してレスポンスを受ける `html-keyboard-response`  を作成するためには、`type` は `'html-keyboard-response'` という文字列を与えます。表示したい肝心の HTMLも、文字列で与えています。fixation は反応を必要としないので、`jsPsych.NO_KEYS` としており、`trial_duration` は定番の（？）1000ms です[[^settings]]。
+[^ver]: ここではver6.3を例に使っているが、バージョンによって利用可能な機能は結構変わるので注意する。
+
+この `html-keyboard-response` では以下に示すように、`type`, `stimulus`, `choices`, `trial_duration` という4つのキーワードを指定してあげる必要があります。HTMLを表示してレスポンスを受けるためには、`type` は `'html-keyboard-response'` という文字列を与えます。表示したい肝心の HTMLも、文字列で与えています。fixation は反応を必要としないので、`jsPsych.NO_KEYS` としており、`trial_duration` は定番の（？）1000ms です[[^settings]]。
 
 [^settings]: ここらへんの設定は論文のMethodセクションにたいてい書いてある。
 
@@ -107,7 +109,7 @@ var fixation = {
 }
 ```
 
-これはfixationなので反応を受け付けないという特殊な `html-keyboard-response` ですが、もちろん特定のキーのみ受け付けて記録できます。公式ドキュメント（ https://www.jspsych.org/7.2/plugins/html-keyboard-response/ ）を参照すると、より細かい指定がわかります。ここでのレスポンスは記録されます。
+これはfixationなので反応を受け付けないという特殊な `html-keyboard-response` ですが、もちろん特定のキーのみ受け付けて記録できます。公式ドキュメントを参照すると、より細かい指定がわかります。ここでのレスポンスは記録されます。
 
 さて、この `response` は他にも色々と使えます。実際、timelineにpushした以下の全ては`preload`か`response`なのです。そして音声呈示が必要か、必要なく指示のみでよいかなどで `response` の種類が分かれます。
 
@@ -132,3 +134,4 @@ timeline.push(axb_question); // 'html-keyboard-response'
 
 次に、これらの細かい問題を [04_jspsych_intermediate](../04_jspsych_intermediate)で解決します。
 
+---
