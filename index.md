@@ -36,6 +36,12 @@
 のリンクから要望をお書きください）。
 この資料はオープンソースですので、編集に加わってくださるのも歓迎です🤗
 
+## Contributors
+
+- [黄 竹佑](https://researchmap.jp/chuyu_huang)
+- [岸山 健](https://researchmap.jp/kishiyamat)
+- [参加する](https://github.com/cool-atami/online-audio-experiment/issues)
+
 <!--
 TODO
 - jsPsychはGorilaとの互換性あり
