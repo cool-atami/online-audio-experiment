@@ -109,23 +109,65 @@ var axb_trial = {
 };
 ```
 
-これはいわゆるJSONと呼ばれる形式で、先程のテーブルを変換して得られます。例として、[Convert CSV to JSON](https://www.convertcsv.com/csv-to-json.htm) のような変換ツールを使ってみましょう。[サンプルファイル](./axb.csv) をダウンロードし、上記サイトにアップロードして CSV To JSON を押します。その内容をコピーして貼り付ければ完了です。
+これはいわゆるJSONと呼ばれる形式で、先程のテーブルを変換して得られます。例として、[Convert CSV to JSON](https://www.convertcsv.com/csv-to-json.htm) のような変換ツールを使ってみましょう。[サンプルファイル](./axb.csv) をダウンロードし、上記サイトにアップロードして CSV To JSON を押します。その内容を上のサンプルスクリプトのようにコピーして貼り付ければ完了です[[^bad]]。
 
+[^bad]: 実際の運用でこのようなコピペは非難されます。まず、外部の変換アプリケーションに依存しているので挙動が保証できないのと、コピペするときにミスが割り込みうるからです。ただ、今回の変換はCSVからJSONという容易なものですし、コピペが必要な箇所もすくないので黙認しています。
+
+## feedback
+
+実際のトライアルに（特に練習のセッションでは）反応の正誤判定をはさみたい場合があります。その場合は、2つのステップで実現できます。まず正誤判定をするタイミングと正誤判定を表示するタイミングがあることを確認しましょう。前者は課題そのもので、その時点で正しいか否かを記録してあげます。これは以下のように `on_finish` というキーに関数を与えて上げれば良いです。この関数は`data.is_correct`に対し、`data.response`と`data.correct`が同じかを格納します。
+
+```js
+var axb_question = {
+    type: 'html-keyboard-response',
+    stimulus: '音声呈示は a -> x -> b の順でした。',
+    choices: ['a', 'b'],
+    prompt: "<p> 2つ目の音(x)は1つ目の音(a)と3つ目の音(b)のどちらに似ていますか。</p>",
+    data: {
+        task: 'axb', // production--perception-categorization
+        type: jsPsych.timelineVariable('type'), // filler--target
+        item_id: jsPsych.timelineVariable('item_id'),
+        correct: jsPsych.timelineVariable('correct'),
+    },
+    on_finish: function (data) {
+        data.is_correct = jsPsych.pluginAPI.compareKeys(data.response, data.correct);
+  },
+};
 ```
-FIXME: 
-// onfinish がないから feedback ができない。
-// randomize もされていない。
 
-timeline_variables: リストを回す際に必須, randomize など
-on_finish （反応の正誤の記録など、リダイレクト）
+次のステップは、この格納した`data.is_correct`を参照して表示させるだけです。前のステップである `axb_question` は `axb_trial` において `feedback` の前に位置しています。このとき、`feedback`からみた`axb_trial`の値`is_correct`は `jsPsych.data.get().last(1).values()[0].is_correct;` で参照できます。
+
+```js
+var feedback = {
+  type: 'html-keyboard-response',
+  stimulus: function () {
+    let last_trial_correct = jsPsych.data.get().last(1).values()[0].is_correct;
+    if (last_trial_correct) { return "<p>正解です。</p>"; }
+    else { return "<p>不正解です。</p>"; }
+  },
+  choices: [' '],
+  prompt: "次の問題に進む場合はスペースキーを押してください。",
+};
+
+var axb_trial = {
+  timeline: [fixation, trial_a, trial_x, trial_b, axb_question, feedback],
+  timeline_variables: timeline_variables
+};
 ```
 
-3.1. Preload
-3.2. リスト作成&ランダマイズ
-3.3. リダイレクト
-補足. function と デバッグ
+これでfeedbackを作成できました。
 
+## ランダム化
 
-function
+これは簡単で、以下のようにするだけです。動作確認中はオフにすることをおすすめします。
+
+```js
+// Shuffle an array, no repeats
+var timeline_variables = jsPsych.randomization.repeat(timeline_variables, 1);
+```
+
+さて、これで実用に足りる実験が作れるようになりました。あとはリストを作成して、すべての音声をpreloadに加えて、パイロット実験をして、仮分析をして、本実験をして、結果を分析して、ゼミで発表して、修正して、学会で発表して、論文にまとめて、投稿するだけです！
+
+次は産出実験の作り方を見ていきましょう。
 
 ---
