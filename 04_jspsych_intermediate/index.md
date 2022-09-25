@@ -2,7 +2,7 @@
 
 ### timeline_variables
 
-前回のページで作成した実験はいかが問題でした。特に１つ目の問題は致命的です。
+前回のページで作成した実験は以下が問題でした。特に１つ目の問題は致命的です。
 
 ```js
 // FIXME: 以下が改善点になる。
@@ -54,7 +54,7 @@ timeline.push(axb_question); // 'html-keyboard-response'
 | espo-1.wav  | esupo-2.wav | esupo-3.wav | target | 1       | b       |
 | esupo-3.wav | esupo-2.wav | espo-1.wav  | filler | 2       | a       |
 
-これを可能にしてくれるのが`timeline_variables`を持ったオブジェクトです。前回は `timeline` という変数を作り、そこにpushしていました。そうではなく、上のテーブルを行方向に回す前提で列名を`jsPsych.timelineVariable('a')` のように参照して `trial_a` などを作ってしまいます。
+これを可能にしてくれるのが`timeline`と`timeline_variables`を持ったオブジェクトです。前回は `timeline` という変数を作り、そこにpushしていました。そうではなく、上のテーブルを行方向に回す前提で列名を`jsPsych.timelineVariable('a')` のように参照して `trial_a` などを作ってしまい、
 
 ```js
 var trial_a = {
@@ -64,24 +64,10 @@ var trial_a = {
     trial_ends_after_audio: true,
     post_trial_gap: 200,
 };
-
-var trial_x = {
-    type: 'audio-keyboard-response',
-    stimulus: jsPsych.timelineVariable('x'), // ここで参照
-    choices: jsPsych.NO_KEYS,
-    trial_ends_after_audio: true,
-    post_trial_gap: 200,
-};
-
-var trial_b = {
-    type: 'audio-keyboard-response',
-    stimulus: jsPsych.timelineVariable('b'), // ここで参照
-    choices: jsPsych.NO_KEYS,
-    trial_ends_after_audio: true,
-};
+// trial_x と trial_b も同様
 ```
 
-そして、`jsPsych.timelineVariable('a')`などで参照するキー（ここでは`'a'`）を持つ辞書を一つの行にします。そうした行を以下のようにトライアル分だけ持つリストを作成します。その結果が以下です。
+さらに上で `jsPsych.timelineVariable('a')`などで参照したキー（ここでは`'a'`）を持つ辞書を、下のようにトライアル分だけ持つリストを作成します。ここではトライアル２つ分だけであり、その結果が以下です。
 
 ```js
 var timeline_variables = [
@@ -102,16 +88,26 @@ var timeline_variables = [
    "correct": "a"
  }
 ]
-
-var axb_trial = {
-  timeline: [fixation, trial_a, trial_x, trial_b, axb_question, feedback],
-  timeline_variables: timeline_variables
-};
 ```
 
 これはいわゆるJSONと呼ばれる形式で、先程のテーブルを変換して得られます。例として、[Convert CSV to JSON](https://www.convertcsv.com/csv-to-json.htm) のような変換ツールを使ってみましょう。[サンプルファイル](./axb.csv) をダウンロードし、上記サイトにアップロードして CSV To JSON を押します。その内容を上のサンプルスクリプトのようにコピーして貼り付ければ完了です[[^bad]]。
 
-[^bad]: 実際の運用でこのようなコピペは非難されます。まず、外部の変換アプリケーションに依存しているので挙動が保証できないのと、コピペするときにミスが割り込みうるからです。ただ、今回の変換はCSVからJSONという容易なものですし、コピペが必要な箇所もすくないので黙認しています。
+[^bad]: 実際の運用でこのようなコピペは非難されます。まず、外部の変換アプリケーションに依存しているので挙動が保証できないのと、コピペするときにミスが割り込みうるからです。ただ、今回の変換はCSVからJSONという容易なものですし、コピペが必要な箇所もすくないので黙認しています。なお、行がかさばって嫌な場合は、適当に一行化すればよいかと思います。
+
+そして最後に、冒頭で述べたように`timeline`と`timeline_variables`を持ったオブジェクトを作成します。これを`timeline`にプッシュすると、先程のCSVを行方向に進めることができます。２件程度ではありがたみが薄いかもしれませんが、72トライアルくらいあると「なるほど、これは便利だ」となるはずです。
+
+```js
+var axb_trial = {
+  timeline: [fixation, trial_a, trial_x, trial_b, axb_question, feedback],
+  timeline_variables: timeline_variables
+};
+
+// TIMELINE
+var timeline = [];
+timeline.push(preload);
+timeline.push(axb_instructions_practice);
+timeline.push(axb_trial);
+```
 
 ## feedback
 
