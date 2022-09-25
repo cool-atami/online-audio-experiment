@@ -166,7 +166,11 @@ var axb_trial = {
 var timeline_variables = jsPsych.randomization.repeat(timeline_variables, 1);
 ```
 
-さて、これで実用に足りる実験が作れるようになりました。あとはリストを作成して、すべての音声をpreloadに加えて、パイロット実験をして、仮分析をして、本実験をして、結果を分析して、ゼミで発表して、修正して、学会で発表して、論文にまとめて、投稿するだけです！
+さて、これで実用に足りる実験が作れるようになりました。ソースコードは[こちら](https://gist.github.com/kishiyamat/0e53281b3e335ada094f9ef0b3ae6928)になります。
+
+<script src="https://gist.github.com/kishiyamat/0e53281b3e335ada094f9ef0b3ae6928.js"></script>
+
+あとはリストを作成して、すべての音声をpreloadに加えて、パイロット実験をして、仮分析をして、本実験をして、結果を分析して、ゼミで発表して、修正して、学会で発表して、論文にまとめて、投稿するだけです！
 
 次は産出実験の作り方を見ていきましょう。
 
