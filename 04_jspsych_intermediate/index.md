@@ -174,6 +174,6 @@ var timeline_variables = jsPsych.randomization.repeat(timeline_variables, 1);
 
 [^preload]: preloadに加える部分もcsv作成→JSONに変換、で良いと思います。
 
-次は産出実験の作り方を見ていきましょう。
+次は産出実験の作り方を見ていきましょう（作成中）。
 
 ---
