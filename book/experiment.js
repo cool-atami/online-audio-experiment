@@ -6,9 +6,37 @@ var jsPsych = initJsPsych({
 });
 
 // TODO: timeline_variables は事前に読み込んでいる前提
-var list_audio_preload = timeline_variables.map(function(obj) {
-    return [obj.a, obj.b, obj.x];
-}).flat(1);
+// var list_audio_preload = timeline_variables.map(function(obj) {
+//     return [obj.a, obj.b, obj.x];
+// }).flat(1);
+
+var list_audio_preload = [
+    "ebuzo-1.wav",
+    "ebuzo-2.wav",
+    "ebuzo-3.wav",
+    "ebzo-1.wav",
+    "ebzo-2.wav",
+    "ebzo-3.wav",
+    "epso-1.wav",
+    "epso-2.wav",
+    "epso-3.wav",
+    "epuso-1.wav",
+    "epuso-2.wav",
+    "epuso-3.wav",
+    "espo-1.wav",
+    "espo-2.wav",
+    "espo-3.wav",
+    "esupo-1.wav",
+    "esupo-2.wav",
+    "esupo-3.wav",
+    "ezbo-1.wav",
+    "ezbo-2.wav",
+    "ezbo-3.wav",
+    "ezubo-1.wav",
+    "ezubo-2.wav",
+    "ezubo-3.wav",
+];
+
 
 var welcome = {
     type: jsPsychHtmlKeyboardResponse,
