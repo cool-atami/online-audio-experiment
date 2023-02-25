@@ -1,16 +1,16 @@
-// timeline_variables は事前に読み込んでいる前提
-var list_audio_preload = timeline_variables.map(function(obj) {
-    // a, b, x が読み込む対象の刺激
-    return [obj.a, obj.b, obj.x];
-}).flat(1);
-
-
 var jsPsych = initJsPsych({
     use_webaudio: false,
     on_finish: function() {
         jsPsych.data.displayData();
     }
 });
+
+// TODO: timeline_variables は事前に読み込んでいる前提
+var list_audio_preload = timeline_variables.map(function(obj) {
+    // EDIT
+    // a, b, x が読み込む対象の刺激
+    return [obj.a, obj.b, obj.x];
+}).flat(1);
 
 var welcome = {
     type: jsPsychHtmlKeyboardResponse,
@@ -71,7 +71,7 @@ var axb_question = {
 };
 
 var goodbye = {
-    type: 'jsPsychHtmlKeyboardResponse',
+    type: jsPsychHtmlKeyboardResponse,
     choices: [' '],
     stimulus: `
     <p>　実験へのご参加ありがとうございます。
