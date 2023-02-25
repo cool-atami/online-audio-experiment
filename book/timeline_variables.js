@@ -4,7 +4,7 @@ var timeline_variables = [
    "b": "esupo-3.wav",
    "x": "espo-2.wav",
    "type": "tgt",
-   "id": 1,
+   "sid": 1,
    "cor": "a"
  },
  {
@@ -12,7 +12,7 @@ var timeline_variables = [
    "b": "espo-3.wav",
    "x": "espo-2.wav",
    "type": "tgt",
-   "id": 2,
+   "sid": 2,
    "cor": "b"
  },
  {
@@ -20,7 +20,7 @@ var timeline_variables = [
    "b": "espo-3.wav",
    "x": "esupo-2.wav",
    "type": "tgt",
-   "id": 3,
+   "sid": 3,
    "cor": "a"
  },
  {
@@ -28,7 +28,7 @@ var timeline_variables = [
    "b": "esupo-3.wav",
    "x": "esupo-2.wav",
    "type": "tgt",
-   "id": 4,
+   "sid": 4,
    "cor": "b"
  },
  {
@@ -36,7 +36,7 @@ var timeline_variables = [
    "b": "epuso-3.wav",
    "x": "epso-2.wav",
    "type": "tgt",
-   "id": 5,
+   "sid": 5,
    "cor": "a"
  },
  {
@@ -44,7 +44,7 @@ var timeline_variables = [
    "b": "epso-3.wav",
    "x": "epso-2.wav",
    "type": "tgt",
-   "id": 6,
+   "sid": 6,
    "cor": "b"
  },
  {
@@ -52,7 +52,7 @@ var timeline_variables = [
    "b": "epso-3.wav",
    "x": "epuso-2.wav",
    "type": "tgt",
-   "id": 7,
+   "sid": 7,
    "cor": "a"
  },
  {
@@ -60,7 +60,7 @@ var timeline_variables = [
    "b": "epuso-3.wav",
    "x": "epuso-2.wav",
    "type": "tgt",
-   "id": 8,
+   "sid": 8,
    "cor": "b"
  },
  {
@@ -68,7 +68,7 @@ var timeline_variables = [
    "b": "ezubo-3.wav",
    "x": "ezbo-2.wav",
    "type": "flr",
-   "id": 9,
+   "sid": 9,
    "cor": "a"
  },
  {
@@ -76,7 +76,7 @@ var timeline_variables = [
    "b": "ezbo-3.wav",
    "x": "ezbo-2.wav",
    "type": "flr",
-   "id": 10,
+   "sid": 10,
    "cor": "b"
  },
  {
@@ -84,7 +84,7 @@ var timeline_variables = [
    "b": "ezbo-3.wav",
    "x": "ezubo-2.wav",
    "type": "flr",
-   "id": 11,
+   "sid": 11,
    "cor": "a"
  },
  {
@@ -92,7 +92,7 @@ var timeline_variables = [
    "b": "ezubo-3.wav",
    "x": "ezubo-2.wav",
    "type": "flr",
-   "id": 12,
+   "sid": 12,
    "cor": "b"
  },
  {
@@ -100,7 +100,7 @@ var timeline_variables = [
    "b": "ebuzo-3.wav",
    "x": "ebzo-2.wav",
    "type": "flr",
-   "id": 13,
+   "sid": 13,
    "cor": "a"
  },
  {
@@ -108,7 +108,7 @@ var timeline_variables = [
    "b": "ebzo-3.wav",
    "x": "ebzo-2.wav",
    "type": "flr",
-   "id": 14,
+   "sid": 14,
    "cor": "b"
  },
  {
@@ -116,7 +116,7 @@ var timeline_variables = [
    "b": "ebzo-3.wav",
    "x": "ebuzo-2.wav",
    "type": "flr",
-   "id": 15,
+   "sid": 15,
    "cor": "a"
  },
  {
@@ -124,7 +124,8 @@ var timeline_variables = [
    "b": "ebuzo-3.wav",
    "x": "ebuzo-2.wav",
    "type": "flr",
-   "id": 16,
+   "sid": 16,
    "cor": "b"
  }
 ]
+
