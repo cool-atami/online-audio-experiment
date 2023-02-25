@@ -1,0 +1,17 @@
+a,b,x,type,id,cor
+espo-1.wav,esupo-3.wav,espo-2.wav,tgt,1,a
+esupo-1.wav,espo-3.wav,espo-2.wav,tgt,2,b
+esupo-1.wav,espo-3.wav,esupo-2.wav,tgt,3,a
+espo-1.wav,esupo-3.wav,esupo-2.wav,tgt,4,b
+epso-1.wav,epuso-3.wav,epso-2.wav,tgt,5,a
+epuso-1.wav,epso-3.wav,epso-2.wav,tgt,6,b
+epuso-1.wav,epso-3.wav,epuso-2.wav,tgt,7,a
+epso-1.wav,epuso-3.wav,epuso-2.wav,tgt,8,b
+ezbo-1.wav,ezubo-3.wav,ezbo-2.wav,flr,9,a
+ezubo-1.wav,ezbo-3.wav,ezbo-2.wav,flr,10,b
+ezubo-1.wav,ezbo-3.wav,ezubo-2.wav,flr,11,a
+ezbo-1.wav,ezubo-3.wav,ezubo-2.wav,flr,12,b
+ebzo-1.wav,ebuzo-3.wav,ebzo-2.wav,flr,13,a
+ebuzo-1.wav,ebzo-3.wav,ebzo-2.wav,flr,14,b
+ebuzo-1.wav,ebzo-3.wav,ebuzo-2.wav,flr,15,a
+ebzo-1.wav,ebuzo-3.wav,ebuzo-2.wav,flr,16,b
