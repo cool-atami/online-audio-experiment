@@ -78,9 +78,10 @@ var goodbye = {
   `,
 };
 
+var shuffled_list= jsPsych.randomization.shuffle(timeline_variables);
 var abx_trial = {
     timeline: [fixation, trial_a, trial_b, trial_x, axb_question],
-    timeline_variables: timeline_variables
+    timeline_variables: shuffled_list
 };
 
 var preload = {
