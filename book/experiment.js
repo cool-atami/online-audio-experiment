@@ -3,10 +3,10 @@
 var list_audio_preload = ['espo-1.wav', 'esupo-2.wav', 'esupo-3.wav']
 
 var jsPsych = initJsPsych({
-  use_webaudio: false,
-  on_finish: function(){
-    jsPsych.data.displayData();
-  }
+    use_webaudio: false,
+    on_finish: function() {
+        jsPsych.data.displayData();
+    }
 });
 
 var welcome = {
@@ -78,8 +78,8 @@ var goodbye = {
 };
 
 var axb_trial = {
-  timeline: [fixation, trial_a, trial_b, trial_x, axb_question],
-  timeline_variables: timeline_variables
+    timeline: [fixation, trial_a, trial_b, trial_x, axb_question],
+    timeline_variables: timeline_variables
 };
 
 var preload = {
@@ -87,6 +87,5 @@ var preload = {
     audio: list_audio_preload,
 }
 
-var timeline = [ welcome, axb_trial, goodbye ]
+var timeline = [welcome, axb_trial, goodbye]
 jsPsych.run(timeline)
-
