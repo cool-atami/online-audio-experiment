@@ -1,6 +1,9 @@
-// list_audio_preload は前でまとめる
-// list_audio_preload は前でまとめる
-var list_audio_preload = ['espo-1.wav', 'esupo-2.wav', 'esupo-3.wav']
+// timeline_variables は事前に読み込んでいる前提
+var list_audio_preload = timeline_variables.map(function(obj) {
+    // a, b, x が読み込む対象の刺激
+    return [obj.a, obj.b, obj.x];
+}).flat(1);
+
 
 var jsPsych = initJsPsych({
     use_webaudio: false,
@@ -87,5 +90,5 @@ var preload = {
     audio: list_audio_preload,
 }
 
-var timeline = [welcome, axb_trial, goodbye]
+var timeline = [preload, welcome, axb_trial, goodbye]
 jsPsych.run(timeline)
