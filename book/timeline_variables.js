@@ -127,5 +127,5 @@ var timeline_variables = [
    "sid": 16,
    "cor": "b"
  }
-]
+];
 

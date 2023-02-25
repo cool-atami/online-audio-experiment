@@ -7,8 +7,6 @@ var jsPsych = initJsPsych({
 
 // TODO: timeline_variables は事前に読み込んでいる前提
 var list_audio_preload = timeline_variables.map(function(obj) {
-    // EDIT
-    // a, b, x が読み込む対象の刺激
     return [obj.a, obj.b, obj.x];
 }).flat(1);
 
@@ -51,7 +49,7 @@ var trial_b = {
 
 var trial_x = {
     type: jsPsychAudioKeyboardResponse,
-    stimulus: jsPsych.timelineVariable('b'),
+    stimulus: jsPsych.timelineVariable('x'),
     choices: jsPsych.NO_KEYS,
     trial_ends_after_audio: true,
     // post_trial_gap: 200,  // 最後は不要
@@ -65,8 +63,8 @@ var axb_question = {
     data: {
         task: 'axb', // production--perception-categorization
         type: jsPsych.timelineVariable('type'), // filler--target
-        item_id: jsPsych.timelineVariable('item_id'),
-        correct: jsPsych.timelineVariable('correct'),
+        item_id: jsPsych.timelineVariable('sid'),
+        correct: jsPsych.timelineVariable('cor'),
     },
 };
 
@@ -80,7 +78,7 @@ var goodbye = {
   `,
 };
 
-var axb_trial = {
+var abx_trial = {
     timeline: [fixation, trial_a, trial_b, trial_x, axb_question],
     timeline_variables: timeline_variables
 };
@@ -90,5 +88,6 @@ var preload = {
     audio: list_audio_preload,
 }
 
-var timeline = [preload, welcome, axb_trial, goodbye]
-jsPsych.run(timeline)
+var timeline = [preload, welcome, abx_trial, goodbye];
+jsPsych.run(timeline);
+
