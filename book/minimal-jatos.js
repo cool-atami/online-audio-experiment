@@ -14,5 +14,5 @@ var welcome = {
 
 //ユーザー定義の時間軸に沿って実行する
 jatos.onLoad(() => {
-    jsPsych.run(welcome);
+    jsPsych.run([welcome]);
 });
