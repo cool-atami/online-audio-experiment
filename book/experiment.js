@@ -55,13 +55,13 @@ var trial_x = {
     // post_trial_gap: 200,  // 最後は不要
 };
 
-var axb_question = {
+var abx_question = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: '音声呈示は a -> b -> x の順でした。',
     choices: ['a', 'b'],
     prompt: "<p> 3つ目の音(x)は1つ目の音(a)と2つ目の音(b)のどちらに似ていますか。</p>",
     data: {
-        task: 'axb', // production--perception-categorization
+        task: 'abx', // production--perception-categorization
         type: jsPsych.timelineVariable('type'), // filler--target
         item_id: jsPsych.timelineVariable('sid'),
         correct: jsPsych.timelineVariable('cor'),
@@ -80,7 +80,7 @@ var goodbye = {
 
 var shuffled_list= jsPsych.randomization.shuffle(timeline_variables);
 var abx_trial = {
-    timeline: [fixation, trial_a, trial_b, trial_x, axb_question],
+    timeline: [fixation, trial_a, trial_b, trial_x, abx_question],
     timeline_variables: shuffled_list
 };
 
