@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome</title>
+    <script src="https://unpkg.com/jspsych@7.3.1"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.1.1"></script>
+    <link href="https://unpkg.com/jspsych@7.3.1/css/jspsych.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body></body>
+  <script>
+//jsPsychの初期化
+var jsPsych = initJsPsych({
+    use_webaudio: false,
+    on_finish: function() {
+        jsPsych.data.displayData();
+    }
+});
+
+
+//プラグイン
+var welcome = {
+    type: jsPsychHtmlButtonResponse,
+    stimulus:'実験に協力していただき、ありがとうございます。',
+    choices: ['完了（反応時間などを記録します）'], 
+    response_ends_trial: true,
+};
+
+//ユーザー定義の時間軸に沿って実行する
+jsPsych.run([
+    welcome
+]);
+  </script>
+</html>
